@@ -23,7 +23,7 @@ app.use('/', express.static('public'));
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
-const emailSupport = 'support@gli-ithelps.freshdesk.co';
+const emailSupport = process.env.ADMIN_EMAIL_ADDRESS;
 app.post('/action', async (req, res) => {
   const { fullname, email, department, phone, category, description } =
     req.body;
